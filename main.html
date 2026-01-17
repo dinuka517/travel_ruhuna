@@ -3,9 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Travel Ruhuna | University of Ruhuna Group Project</title>
+    <link href="style.css" rel="stylesheet">
+    
+
 </head>
 <body>
-    
+    <!------Header------>
+    <div>
+        <header>
+            <nav>
+                <div class="kandy-logo"><a href="index.html" class="logo"><img src="img/web_logo.png" alt="logo" width="120px"></a></div>
+                <div id="navbuttons" class="nav-buttons">
+                    <i class="fa fa-times-circle-o" onclick="hideMenu()"></i>
+                    <ul class="nav-buttons-ul">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#packages">Packges</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                         <li><a href="d:\login btn\index.html">login</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="menubutton"><i class="fa fa-bars" onclick="showMenu()"></i></div>
+            </nav>
+        </header>
+    </div>
+
+    <!------Home Page------>
+    <div id="home" class="page-content-active">
+        <div class="bg-img-01">
+            <div class="first-div">
+                <h1>Welcome to Kandy</h1><br>
+                <p>A Beautiful city in Sri Lanka</p>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2>Welcome to Ruhuna Travels</h2>
+            <p>Our mission is to provide the most authentic travel experiences in the pearl of the Indian Ocean. From the golden beaches of the south to the misty mountains of the central highlands, we cover it all.</p>
+        </div>
+    </section>
+
+    <section id="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="dest-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1586902197503-e71026292412?auto=format&fit=crop&w=500&q=80" alt="Ella">
+                <div class="card-content">
+                    <h3>Ella</h3>
+                    <p>Experience the misty mountains and the famous Nine Arches Bridge.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=500&q=80" alt="Galle">
+                <div class="card-content">
+                    <h3>Galle Fort</h3>
+                    <p>A walk through history with colonial architecture and sea views.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=80" alt="Sigiriya">
+                <div class="card-content">
+                    <h3>Sigiriya</h3>
+                    <p>Climb the ancient Lion Rock fortress, a UNESCO world heritage site.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" style="background-color: #f1f1f1;">
+        <h2>Tour Packages</h2>
+        <div class="package-container">
+            <div class="package-card">
+                <h3>City Tour</h3>
+                <p>Duration: 2 Days</p>
+                <div class="price">LKR 15,000</div>
+                <p>Guided city walks, meals included, 3-star stay.</p>
+                <br>
+                <a href="#" class="btn" onclick="alert('Booking system coming soon!')">Book Now</a>
+            </div>
+            <div class="package-card">
+                <h3>Nature Escape</h3>
+                <p>Duration: 5 Days</p>
+                <div class="price">LKR 45,000</div>
+                <p>Hiking, Safari, Camping, All-inclusive.</p>
+                <br>
+                <a href="#" class="btn" onclick="alert('Booking system coming soon!')">Book Now</a>
+            </div>
+            <div class="package-card">
+                <h3>Heritage Tour</h3>
+                <p>Duration: 3 Days</p>
+                <div class="price">LKR 25,000</div>
+                <p>Museum entries, cultural shows, expert guides.</p>
+                <br>
+                <a href="#" class="btn" onclick="alert('Booking system coming soon!')">Book Now</a>
+            </div>
+        </div>
+    </section>
+[    <div class="ga">
+    <section id="gallery">
+        <h2>Travel Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\R.jpg" alt="G1" onclick="openImg(this)"></div>
+            <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\paramounting-in-bentota.jpg" alt="G2" onclick="openImg(this)"></div>
+            <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\R (1).jpg" alt="G3" onclick="openImg(this)"></div>
+            <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\OIP.jpg" alt="G4" onclick="openImg(this)"></div>
+            <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\OIP (1).webp" alt="G5" onclick="openImg(this)"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=300&q=80" alt="G6" onclick="openImg(this)"></div>
+            <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\OIP (2).webp" alt="G7" onclick="openImg(this)"></div>
+            <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\OIP (3).webp" alt="G8" onclick="openImg(this)"></div>
+            <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\OIP (4).webp" alt="G6" onclick="openImg(this)"></div>
+             <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\OIP (5).webp" alt="G6" onclick="openImg(this)"></div>
+              <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\OIP (6).webp" alt="G6" onclick="openImg(this)"></div>
+               <div class="gallery-item"><img src="c:\Users\Aruna Prasad\OneDrive\Pictures\Criterion Games\OIF.webp" alt="G6" onclick="openImg(this)"></div>
+            <div id="imgModal" class="modal" onclick="closeImg()">
+              <img id="modalImg">
+           </div>
+        </div>
+    </section>
+  </div>]
+    <section id="about" style="background-color: var(--accent-color);">
+        <h2>About This Project</h2>
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <p><strong>University of Ruhuna</strong></p>
+            <p>Faculty of Science / Engineering / Management (Edit as per your faculty)</p>
+            <p style="margin: 20px 0;">This website is a static front-end web development project created by Group 12 (Edit your group number). It demonstrates the use of semantic HTML5, modern CSS Grid/Flexbox layouts, and responsive design principles.</p>
+            <p><strong>Team Members:</strong> Student 01, Student 02, Student 03, Student 04.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Your travel inquiry..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Ruhuna Travels. All rights reserved.</p>
+            <div class="social-icons">
+                <span>Facebook</span> | <span>Instagram</span> | <span>Twitter</span>
+            </div>
+            <p>University of Ruhuna – ICT Group Project</p>
+        </div>
+    </footer>
+<script src="script.js"></script>
 </body>
 </html>
