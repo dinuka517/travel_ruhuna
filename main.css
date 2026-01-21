@@ -1,295 +1,529 @@
-/* --- CSS STYLES --- */
-        *{
+:root {
+    --primary-blue: #1e88e5;
+    --secondary-green: #2ecc71;
+    --accent-color: #f8f9fa;
+    --dark-text: #2c3e50;
+    --white: #ffffff;
+}
 
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-
-        header {
-           
-            color: white;
-            position: fixed;
-            padding: 1rem 0;
-            width: 100%;
-            height: 90px;
-            top: 0;
-            z-index: 1000;
-            
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .kandy-logo .logo {
-            text-decoration: none;
-            color: #ffff;
-            font-size: 25px;
-            margin-left: -65px;
-            font-family: 'Georgia', serif;
-            font-weight: bolder;
-        }
-
-        .nav-buttons-ul {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-            margin-right: -600px;
-             transition: 0.5s;
-        }
-  
-
-        .nav-buttons ul li::after {
-            content: '';
-            width: 0%;
-            height: 2px;
-            background: #ffff;
-            display: block;
-            margin: auto;
-            transition: 0.5s;
-        }
-
-        .nav-buttons ul li:hover::after {
-            width: 100%;
-        }
-
-        .nav-buttons ,a {
-            text-decoration: none;
-            color: #ffff;
-            font-size: 15px;
-            font-family: 'Georgia', serif;
-        }
-          .nav-buttons ul a {
-            text-decoration: none;
-            color: var(--dark-text);
-            font-weight: 500;
-            transition: color 0.3s;r
-
-       }
-
-        #home .bg-img-01 {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(car-rental-in-2024.jpg);
-            height: 800px;
-            background-size: cover;
-            display: flex;
-            background-position: center;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffff;
-            margin-top: 0px;
-            padding: 0;
-        }
-
-        #home .bg-img-01 .first-div h1 {
-            font-size: 65px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            margin-bottom: 16px;
-        }
-
-        #home .bg-img-01 .first-div p {
-            font-size: 20px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            margin-bottom: 32px;
-        }
-
-        nav .fa{
-            display: none;
-        }
-
-        section {
-            padding: 80px 10%;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--primary-blue);
-        }
-
-        /* Destinations Grid */
-        .dest-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        /* Packages Table-like Cards */
-        .package-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .package-card {
-            background: var(--accent-color);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            width: 280px;
-            border: 2px solid var(--primary-blue);
-        }
-
-        .price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--secondary-green);
-            margin: 15px 0;
-        }
-
-        /* Gallery */
-        .ga{
-            background-color: rgb(182, 223, 239);
-        }
-        .gallery img {
-    width: 150px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 10px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
 }
 
-/* Modal background */
+/* Header & Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--white);
+    text-decoration: none;
+    font-family: Georgia, serif;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-green);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    animation: fadeInUp 1.2s ease;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--secondary-green);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s;
+    animation: fadeInUp 1.4s ease;
+}
+
+.btn:hover {
+    background: #27ae60;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sections */
+section {
+    padding: 80px 10%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-blue);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-green);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Destinations Carousel */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}
+
+h2 { text-align: center; margin-bottom: 30px; }
+
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Keeps the cards outside the 'window' hidden */
+    padding: 20px 0; /* Space for the 'pop up' hover effect */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    padding: 10px; /* Gives space for the scale(1.1) effect so it doesn't clip */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Position buttons ON TOP of the carousel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100; /* Ensure they stay above the cards */
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+.destination-card {
+    min-width: 300px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.4s ease; /* Smooth transition for blur and scale */
+    cursor: pointer;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: crop;
+}
+
+.card-content { padding: 20px; }
+
+/* FOCUS EFFECT LOGIC */
+
+/* 1. When the mouse enters the track, blur all cards */
+.carousel-track:hover .destination-card {
+    filter: blur(4px);
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+/* 2. When a specific card is hovered, pop it up and clear it */
+.carousel-track .destination-card:hover {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1.1); /* "Pop up" effect */
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    z-index: 11;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+/* Packages */
+#packages {
+    background: var(--accent-color);
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.package-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border: 3px solid transparent;
+}
+
+.package-card:hover {
+    border-color: var(--primary-blue);
+    transform: scale(1.05);
+}
+
+.package-card h3 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-green);
+    margin: 20px 0;
+}
+
+.package-features {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.package-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.package-features li:last-child {
+    border-bottom: none;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 250px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.2);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    color: var(--white);
+    font-size: 2rem;
+}
+
+/* Modal */
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.7);
-    display: flex;
-    justify-content: center;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
     align-items: center;
+    justify-content: center;
 }
 
-/* Large image */
+.modal.active {
+    display: flex;
+}
+
 .modal img {
-    width: 70%;
-    max-width: 600px;
-    border-radius: 15px;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
 }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-        }
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: var(--white);
+    font-size: 3rem;
+    cursor: pointer;
+}
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            height: 200px;
-        }
+/* About */
+#about {
+    background: linear-gradient(135deg, var(--primary-blue), #1565c0);
+    color: var(--white);
+}
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
+#about h2 {
+    color: var(--white);
+}
 
-        .gallery-item:hover img {
-            transform: scale(1.2);
-            filter: brightness(70%);
-        }
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
 
-        /* Contact Form */
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+/* Contact */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
+.form-group {
+    margin-bottom: 25px;
+}
 
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-text);
+}
 
-        button.submit-btn {
-            width: 100%;
-            padding: 12px;
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
 
-        /* Footer */
-        footer {
-            background: var(--dark-text);
-            color: white;
-            padding: 50px 10%;
-            text-align: center;
-        }
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
 
-        .footer-content p {
-            margin-bottom: 20px;
-        }
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
 
-        .social-icons {
-            margin-bottom: 20px;
-        }
+.submit-btn:hover {
+    background: #1565c0;
+    transform: translateY(-2px);
+}
 
-        .social-icons span {
-            margin: 0 10px;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
+/* Footer */
+footer {
+    background: var(--dark-text);
+    color: var(--white);
+    padding: 40px 10%;
+    text-align: center;
+}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* In a real project, you'd add a hamburger menu */
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-green);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        padding: 80px 20px;
+        transition: right 0.3s;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .destination-card {
+        flex: 0 0 calc(80% - 20px);
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
