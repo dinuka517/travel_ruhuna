@@ -1,46 +1,40 @@
+const track = document.getElementById('carouselTrack');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+const cards = document.querySelectorAll('.destination-card');
 
-function openImg(img) {
-    document.getElementById("imgModal").style.display = "flex";
-    document.getElementById("modalImg").src = img.src;
+let index = 0;
+
+// Function to move the carousel
+function moveCarousel() {
+    const cardWidth = cards[0].offsetWidth + 20; // Card width + gap
+    track.style.transform = `translateX(${-index * cardWidth}px)`;
 }
 
-function closeImg() {
-    document.getElementById("imgModal").style.display = "none";
-}
+// Next Button Click
+nextBtn.addEventListener('click', () => {
+    // Prevent moving past the last card
+    if (index < cards.length - 1) {
+        index++;
+        moveCarousel();
+    } else {
+        index = 0; // Loop back to start
+        moveCarousel();
+    }
+});
 
+// Previous Button Click
+prevBtn.addEventListener('click', () => {
+    if (index > 0) {
+        index--;
+        moveCarousel();
+    } else {
+        index = cards.length - 1; // Loop to end
+        moveCarousel();
+    }
+});
 
-var navbuttons = document.getElementById("navbuttons");
-
-        function showMenu(){
-            navbuttons.style.right = "0";
-        }
-        function hideMenu(){
-            navbuttons.style.right = "-200px";
-        }
-        
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic Form Validation
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            if (name === "" || email === "" || message === "") {
-                alert("Please fill in all fields before submitting.");
-                return;
-            }
-
-            // Simple Email Regex
-            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-            if (!email.match(emailPattern)) {
-                alert("Please enter a valid email address.");
-                return;
-            }
-
-            // Success Message
-            alert("Thank you, " + name + "! Your message has been sent successfully. (Static Demo)");
-            
-            // Clear Form
-            this.reset();
-        });
+// Automatic Slide (Optional)
+setInterval(() => {
+    nextBtn.click();
+}, 6000); // Changes every 3 seconds
